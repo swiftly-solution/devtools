@@ -4,7 +4,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
 import './index.css'
 import { Layout } from './Layout'
 import { CrashAnalyzer } from './crash/CrashAnalyzer'
-import { Pending } from './Pending'
+import { ProfilerAnalyzer } from './profiler/ProfilerAnalyzer'
 
 const router = createBrowserRouter([
   {
@@ -12,10 +12,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Navigate to="/crash-analyzer" replace /> },
       { path: 'crash-analyzer', element: <CrashAnalyzer /> },
-      {
-        path: 'profiler-analyzer',
-        element: <Pending title="Profiler Analyzer" description="Inspect profiler captures and find hot spots. Coming soon." />,
-      },
+      { path: 'profiler-analyzer', element: <ProfilerAnalyzer /> },
       { path: '*', element: <Navigate to="/crash-analyzer" replace /> },
     ],
   },
